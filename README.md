@@ -32,3 +32,12 @@ You might want something like this:
 
     USER root
     CMD ./run.sh
+
+## Developers
+
+If you want to build a different docker image with a specific node version:
+
+
+    docker build --build-arg NODE_VERSION=<node-version> --build-arg=NPM_VERSION=<version> .
+    docker tag <id> ukti/alpine-nginx-nodejs:<node-version>
+    docker push ukti/alpine-nginx-nodejs:<node-version>
